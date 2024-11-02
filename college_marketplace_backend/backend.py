@@ -1,22 +1,32 @@
-from flask import Flask, jsonify, request
+from flask import Flask, jsonify, request, render_template
 from flask_sqlalchemy import SQLAlchemy
+
+"""Use http://127.0.0.1:5000/items to access items"""
 
 # Create an instance of Flask
 app = Flask(__name__)
+
+@app.route('/')
+def index():
+    # This will serve the "index.html" file when the user visits "/"
+    return render_template('index.html')
+
+if __name__ == '__main__':
+    app.run(debug=True)
 
 # Configure the database
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///marketplace.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 
-# Define the Item model for the database
+# Represents an Item and all the attributes associated with it
 class Item(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(80), nullable=False)
     price = db.Column(db.Float, nullable=False)
     description = db.Column(db.String(200), nullable=True)
 
-# Create the database tables
+# Create the database tables for Item
 with app.app_context():
     db.create_all()
 
