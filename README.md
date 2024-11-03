@@ -9,7 +9,7 @@ UNC Marketplace is one-stop shop for Carolina students to sell and buy used scho
 - Through user profile, users can submit listings
 
 ## Languages
-The project solely used html, CSS, and Python. 
+The project solely used HTML, CSS, and Python. 
 
 ## AI Usage
 
