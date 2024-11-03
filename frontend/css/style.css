@@ -1,0 +1,252 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: #96c0e9; 
+}
+
+header {
+    background-image: url('../images/header-bg.jpg');
+    background-size: cover; 
+    background-position: center; 
+    color: #fff; 
+    padding: 1.5rem;
+    text-align: center;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); 
+    height: 500px; 
+    
+}
+
+header {
+    position: relative;
+    color: #fff;
+    padding: 1.5rem;
+    text-align: center;
+}
+
+header::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /*Semi-transparent overlay*/
+    z-index: 0;
+}
+
+header * {
+    position: relative;
+    z-index: 1;
+}
+
+
+header nav a {
+    color: #fff;
+    margin: 0 1.5rem;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+header nav a:hover {
+    color: #CDE1F4; /* Light Carolina blue */
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#myCartButton {
+    margin-left: auto; /* Push the cart button to the right */
+    padding: 10px 15px; /* Add some padding for aesthetics */
+    background-color: #007bff; /* Button background color */
+    color: white; /* Button text color */
+    text-decoration: none; /* Remove underline */
+    border-radius: 5px; /* Rounded corners */
+}
+
+#myCartButton:hover {
+    background-color: #0056b3; /* Darken background on hover */
+}
+
+/* Add this to your CSS file */
+.product-list {
+    display: flex; /* Use flexbox for layout */
+    flex-wrap: wrap; /* Allow items to wrap onto the next line */
+    justify-content: space-around; /* Space out products evenly */
+    margin: 20px; /* Add some margin around the list */
+}
+
+.product {
+    flex: 1 1 calc(30% - 20px); /* Adjust product width to be responsive */
+    margin: 10px; /* Add margin between products */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional: Add some shadow for aesthetics */
+    border-radius: 5px; /* Optional: Rounded corners */
+    text-align: center; /* Center-align text */
+}
+
+.product img {
+    max-width: 100%; /* Ensure the image is responsive */
+    height: auto; /* Maintain aspect ratio */
+}
+
+button.add-to-cart {
+    padding: 10px 15px; /* Add padding for aesthetics */
+    background-color: #007bff; /* Button background color */
+    color: white; /* Button text color */
+    border: none; /* Remove default border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s; /* Smooth transition for hover */
+}
+
+button.add-to-cart:hover {
+    background-color: #0056b3; /* Darken background on hover */
+}
+
+/* Media queries for smaller screens */
+@media (max-width: 768px) {
+    .product {
+        flex: 1 1 calc(45% - 20px); /* Adjust width for smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .product {
+        flex: 1 1 calc(100% - 20px); /* Full width for mobile screens */
+    }
+}
+
+
+
+main {
+    padding: 2rem;
+    flex: 1;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+h1, h2 {
+    color: #f5e9e9;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+/* Homepage & Categories */
+.search-bar {
+    display: flex;
+    justify-content: center;
+    margin: 1.5rem 0;
+}
+
+.search-bar input {
+    padding: 0.5rem;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 5px 0 0 5px;
+    width: 70%;
+    max-width: 400px;
+}
+
+.search-bar button {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    background-color: #4B9CD3; /* Carolina blue */
+    color: #fff;
+    border: none;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.search-bar button:hover {
+    background-color: #357aa7; /* Darker blue on hover */
+}
+
+.category-list {
+    display: flex;
+    justify-content: space-around;
+    margin: 1.5rem 0;
+}
+
+.category {
+    background-color: #EAF2FA; /* Light Carolina blue */
+    padding: 1rem;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.category:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Product Listing */
+.product-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1.5rem;
+}
+
+.product h3 {
+    font-size: 1.2rem;
+    margin: 0.5rem 0;
+    color: #333;
+}
+
+.product p {
+    font-size: 1rem;
+    color: #666;
+    margin: 0.5rem 0;
+}
+
+.product button {
+    padding: 0.5rem 1rem;
+    background-color: #4B9CD3; /* Carolina blue */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.product button:hover {
+    background-color: #357aa7; /* Darker blue on hover */
+
+}
+
+.product img {
+    width: 100%;
+    height: auto;
+    max-height: 150px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+footer {
+    text-align: center;
+    padding: 1.5rem;
+    background-color: #333;
+    color: #fff;
+    font-size: 0.9rem;
+}
+
+/* Responsive Image */
+.responsive-image {
+    width: 150px;
+    height: 100px;
+    object-fit: cover;
+}

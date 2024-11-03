@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UNC Marketplace</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <h1>UNC Marketplace</h1>
+        <nav>
+            <a href="product-list.html">Browse Listings</a>
+            <a href="profile.html">My Profile</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="search-bar">
+            <input type="text" id="searchInput" placeholder="Search for items...">
+            <button id="searchButton">Search</button>
+        </section>
+
+        <section class="categories">
+            <div class="category-list">
+                <button class="category" data-category="electronics">Electronics</button>
+                <button class="category" data-category="dorm essentials">dorm essentials</button>
+                <button class="category" data-category="books">Books</button>
+                <button class="category" data-category="all">All</button>
+            </div>
+        </section>
+
+        <section class="product-list" id="productList">
+            <!-- Product 1 -->
+            <div class="product" data-category="electronics">
+                <img src="images/iclicker.jpg" alt="Used iClicker" class="responsive-image">
+                <h3>Used iClicker</h3>
+                <p>$30</p>
+                <button class="add-to-cart" data-product-id="1">Add to Cart</button>
+                <a href="product-detail.html?productId=1">View Details</a>
+            </div>
+
+            <!-- Product 2 -->
+            <div class="product" data-category="dorm essentials">
+                <img src="images/usedmicrowave.jpg" alt="Used Microwave" class="responsive-image">
+                <h3>Used Microwave</h3>
+                <p>$50</p>
+                <button class="add-to-cart" data-product-id="2">Add to Cart</button>
+                <a href="product-detail.html?productId=2">View Details</a>
+            </div>
+
+            <!-- Product 3 -->
+            <div class="product" data-category="books">
+                <img src="images/usedtextbook.jpg" alt="Used Textbook" class="responsive-image">
+                <h3>Used Textbook</h3>
+                <p>$15</p>
+                <button class="add-to-cart" data-product-id="3">Add to Cart</button>
+                <a href="product-detail.html?productId=3">View Details</a>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 College Marketplace</p>
+    </footer>
+    <script src="js/main.js"></script>
+</body>
+</html>
