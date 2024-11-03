@@ -12,7 +12,7 @@ UNC Marketplace is one-stop shop for Carolina students to sell and buy used scho
 The project solely used HTML, CSS, and Python. 
 
 ## AI Usage
-
+ChatGPT was primarily used in developing the backend of this project and for creating the functional form for submitting listings. 
 
 ## Future Advancements
 - Addition of a sign-in page where UNC students must create a profile with their school email to access the website
