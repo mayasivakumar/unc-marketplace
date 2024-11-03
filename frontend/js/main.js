@@ -65,3 +65,34 @@ const products = [
 function findProductById(id) {
     return products.find(product => product.id == id);
 }
+
+// Modal functionality for New Listing
+document.getElementById("newListingButton").onclick = function() {
+    document.getElementById("newListingModal").style.display = "block";
+}
+
+document.querySelector(".close").onclick = function() {
+    document.getElementById("newListingModal").style.display = "none";
+}
+
+window.onclick = function(event) {
+    if (event.target == document.getElementById("newListingModal")) {
+        document.getElementById("newListingModal").style.display = "none";
+    }
+}
+
+document.getElementById("newListingForm").onsubmit = function(event) {
+    event.preventDefault();
+    const title = document.getElementById("listingTitle").value;
+    const description = document.getElementById("listingDescription").value;
+    const contact = document.getElementById("contactMethod").value;
+
+    // Handle form submission here (e.g., send data to your server or display it)
+    console.log(`Title: ${title}, Description: ${description}, Contact: ${contact}`);
+
+    // Close the modal
+    document.getElementById("newListingModal").style.display = "none";
+
+    // Optionally, reset the form
+    document.getElementById("newListingForm").reset();
+}
