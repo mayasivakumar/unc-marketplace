@@ -79,12 +79,16 @@ header nav a:hover {
     background-color: #fefefe;
     margin: 15% auto; /* 15% from the top and centered */
     padding: 20px;
-    border: 1px solid #888;
+    border: 1px solid #b84a4a;
     width: 80%; /* Could be more or less, depending on screen size */
 }
 
+.modal-title {
+    color: #A2C8E1; /* Carolina blue */
+}
+
 .close {
-    color: #aaa;
+    color: #977575;
     float: right;
     font-size: 28px;
     font-weight: bold;

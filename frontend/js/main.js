@@ -81,18 +81,17 @@ window.onclick = function(event) {
     }
 }
 
-document.getElementById("newListingForm").onsubmit = function(event) {
-    event.preventDefault();
-    const title = document.getElementById("listingTitle").value;
-    const description = document.getElementById("listingDescription").value;
-    const contact = document.getElementById("contactMethod").value;
 
-    // Handle form submission here (e.g., send data to your server or display it)
-    console.log(`Title: ${title}, Description: ${description}, Contact: ${contact}`);
+document.getElementById("newListingButton").onclick = function() {
+    document.getElementById("newListingModal").style.display = "block";
+}
 
-    // Close the modal
+document.querySelector(".close").onclick = function() {
     document.getElementById("newListingModal").style.display = "none";
+}
 
-    // Optionally, reset the form
-    document.getElementById("newListingForm").reset();
+window.onclick = function(event) {
+    if (event.target == document.getElementById("newListingModal")) {
+        document.getElementById("newListingModal").style.display = "none";
+    }
 }

@@ -1,5 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -19,15 +18,13 @@
         <section class="profile-info">
             <h2>Welcome, [User Name]</h2>
             <p>Your Listings</p>
-
-            <!-- New Listing Button -->
             <button id="newListingButton">New Listing</button>
 
-            <!-- Modal for New Listing Form -->
+            <!--New Listing Form -->
             <div id="newListingModal" class="modal">
                 <div class="modal-content">
                     <span class="close">&times;</span>
-                    <h2>Create a New Listing</h2>
+                    <h2 class="modal-title">Create a New Listing</h2>
                     <form id="newListingForm">
                         <label for="listingTitle">Title:</label>
                         <input type="text" id="listingTitle" name="listingTitle" required><br><br>
@@ -59,6 +56,38 @@
         <p>&copy; 2024 College Marketplace</p>
     </footer>
 
-    <script src="js/main.js"></script> <!-- Make sure to include your JS file -->
+    <script src="js/main.js"></script> 
+    <script>
+        // Modal functionality for New Listing
+        document.getElementById("newListingButton").onclick = function() {
+            document.getElementById("newListingModal").style.display = "block";
+        }
+
+        document.querySelector(".close").onclick = function() {
+            document.getElementById("newListingModal").style.display = "none";
+        }
+
+        window.onclick = function(event) {
+            if (event.target == document.getElementById("newListingModal")) {
+                document.getElementById("newListingModal").style.display = "none";
+            }
+        }
+
+        document.getElementById("newListingForm").onsubmit = function(event) {
+            event.preventDefault();
+            const title = document.getElementById("listingTitle").value;
+            const description = document.getElementById("listingDescription").value;
+            const contact = document.getElementById("contactMethod").value;
+
+            // Handle form submission here (e.g., send data to your server or display it)
+            console.log(`Title: ${title}, Description: ${description}, Contact: ${contact}`);
+
+            // Close the modal
+            document.getElementById("newListingModal").style.display = "none";
+
+            // Optionally, reset the form
+            document.getElementById("newListingForm").reset();
+        }
+    </script>
 </body>
 </html>
